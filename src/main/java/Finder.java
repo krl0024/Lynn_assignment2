@@ -1,39 +1,45 @@
 public class Finder {
-    int max;
-    int min;
-    int length;
+    private int max;
+    private int min;
+    private int length = 0;
     public Integer findMax(int[] intArray){
-        length = intArray.length;
-        int i = 0;
-        /** if(intArray == null) {
-
-        }**/
-
-        if(length == 0 || intArray == null) {
+        if(intArray == null) {
             return null;
         }
 
-        while(i < length) {
+        length = intArray.length - 1;
+      //  int i = 0;
+
+
+        if(length == 0) {
+            return null;
+        }
+
+        //while(i < length) {
+        for(int i = 0; i < length; i++){
+            // in the future, can use Math.max
             if(intArray[i] > intArray[length]) {
                 max = intArray[i];
             }
             else {
                 max = intArray[length];
             }
-            i++;
-
         }
         return max;
     }
 
     public Integer findMin(int[] intArray) {
-
-        length = intArray.length;
-        int j = 0;
-        if (length == 0 || intArray == null) {
+        if(intArray == null) {
             return null;
         }
-        while(j < length) {
+
+        length = intArray.length - 1;
+
+        if(length == 0) {
+            return null;
+        }
+        for(int j = 0; j < length; j++) {
+
             if(intArray[j] < intArray[length]) {
                 min = intArray[j];
             }
