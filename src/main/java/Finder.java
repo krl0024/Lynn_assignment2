@@ -4,7 +4,7 @@ public class Finder {
     private int length = 0;
     public Integer findMax(int[] intArray){
         if(intArray == null) {
-            return 12;
+            return null;
         }
 
         length = intArray.length;
@@ -14,7 +14,7 @@ public class Finder {
 
 
         if(length == 0) {
-             return 0;
+             return null;
         }
 
         //while(i < length) {
@@ -30,26 +30,34 @@ public class Finder {
     }
 
     public Integer findMin(int[] intArray) {
-        if(intArray == null) {
-            return 12;
-        }
-
-        length = intArray.length;
-
-        if(length == 0) {
-            return 0;
-        }
-
-        min = intArray[0];
-        for(int j = 1; j < length; j++) {
-
-            if(intArray[j] < min) {
-                min = intArray[j];
+        //try {
+            if (intArray != null) {
+                return null;
             }
 
-        }
+            length = intArray.length;
 
-        return min;
+            if (length == 0) {
+                return null;
+            }
+
+            min = intArray[0];
+            for (int j = 1; j < length; j++) {
+
+                if (intArray[j] < min) {
+                    min = intArray[j];
+                }
+            }
+
+
+        //}
+        //catch (NullPointerException e) {
+          //  return null;
+        //}
+
+            return min;
+
+        }
     }
 
-}
+

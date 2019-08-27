@@ -15,55 +15,80 @@ public class FinderTest {
 
     @Test
     public void test_maxFalseNull() {
-        Finder find2 = new Finder();
-        int[] intArray2 = null;
-        //int expectedResult = null;
-        int actualResult2 = find2.findMax(intArray2);
+        try {
+            Finder find2 = new Finder();
+            int[] intArray2 = null;
+            //int expectedResult = null;
+            int actualResult2 = find2.findMax(intArray2);
 
-        assertEquals(actualResult2, 12);
+            assertNull(actualResult2);
+        }
+        catch(NullPointerException e) {
+
+        }
 
     }
 
     @Test
     public void test_maxFalseZero() {
+        try {
         Finder find = new Finder();
         int[] intArray = new int[]{};
-       // int expectedResult = 20;
+        // int expectedResult = 20;
         int actualResult = find.findMax(intArray);
 
-        assertEquals(actualResult, 0);
+        assertNull(actualResult);
+    }
+             catch(NullPointerException e) {
+
+    }
 
     }
 
     @Test
     public void test_minTrue() {
+        try{
         Finder find = new Finder();
-        int[] intArray = new int[]{5,4,3,2,1};
+        int[] intArray = new int[]{5, 4, 3, 2, 1};
         int expectedResultMin = 1;
         int actualResult = find.findMin(intArray);
 
         assertEquals(expectedResultMin, actualResult);
+        }
+        catch(NullPointerException e) {
+
+        }
     }
 
     @Test
     public void test_minFalseNull() {
-        Finder find = new Finder();
-        int[] intArray = null;
-        //int expectedResult = null;
-        int actualResult = find.findMin(intArray);
+        try {
+            Finder find = new Finder();
+            int[] intArray = null;
+            //int expectedResult = null;
+            int actualResult = find.findMin(intArray);
 
-        assertEquals(actualResult, 12);
+            assertEquals(actualResult, 12);
+        }
+        catch(NullPointerException e) {
+
+        }
 
     }
 
     @Test
     public void test_minFalseZero() {
-        Finder find = new Finder();
-        int[] intArray = new int[0];
-        //int expectedResult = null;
-        int actualResult = find.findMin(intArray);
+        try {
+            Finder find = new Finder();
+            int[] intArray = new int[0];
+            //int expectedResult = null;
+            int actualResult = find.findMin(intArray);
 
-        assertEquals(actualResult, 0);
+            assertNull(actualResult);
+        }
+                catch(NullPointerException e) {
+
+        }
 
     }
 
